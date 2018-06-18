@@ -1,0 +1,23 @@
+<%= render 'shared/page_title', title: @recipe.title %>
+<div class="main_content">
+  <div class="row" id='recipe_top'>
+    <div class="col-md-4">
+      
+    </div>
+    <div class="col-md-8 col-md-offset-1">
+      <div class="recipe_info">
+        <h1>Recipe Title: <%= @recipe.title.titleize %></h1>
+        <p class="description">
+          <%= @recipe.description %>
+        </p>
+        <p>
+          <%= link_to gravatar_for(@recipe.chef), recipes_path %>
+          Created by: <small><%= @recipe.chef.chefname.titleize %></small>
+          <%= time_ago_in_words(@recipe.created_at) %> ago
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
