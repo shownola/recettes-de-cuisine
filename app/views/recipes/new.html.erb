@@ -1,30 +1,3 @@
 <%= render 'shared/page_title', title: 'Create a New Recipe' %>
 
-<%= simple_form_for @recipe, html: { multipart: true, class: 'form-horizontal' } do |f| %>
-  <% if @recipe.errors.any? %>
-    <p>
-      <%= @recipe.errors.count %>
-      Prevented this recipe from being saved
-    </p>
-    <ul>
-      <% @recipe.errors.full_messages.each do |msg| %>
-        <li>
-          <%= msg %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-<div class="container">
-  <div class="card-body form-group">
-    <%= f.input :title, html: { class: 'form-control' } %>
-    <%= f.input :description, html: { class: 'form-control' } %>
-    <%= f.input :image, accept: 'image/jpeg, image/gif, image/png', input_html: { class: 'form-control', role: 'form' } %>
-    
-    
-     <%= f.button :submit, class: "btn btn-danger" %>
-     
-    
-  <% end %>
-    
-  </div>
-</div>
+<%= render 'form' %>

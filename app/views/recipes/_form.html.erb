@@ -1,0 +1,114 @@
+<%= simple_form_for @recipe, html: { multipart: true, class: 'form-horizontal' } do |f| %>
+  <% if @recipe.errors.any? %>
+    <p>
+      <%= @recipe.errors.count %>
+      Prevented this recipe from being saved
+    </p>
+    <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li>
+          <%= msg %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<div class="container">
+  <div class="card-body form-group">
+    <%= f.input :title, html: { class: 'form-control' } %>
+    <%= f.input :description, html: { class: 'form-control' } %>
+    <%= f.input :image, accept: 'image/jpeg, image/gif, image/png', input_html: { class: 'form-control', role: 'form' } %>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Ingredients</h3>
+        <div id="ingredients">
+          <%= f.simple_fields_for :ingredients do |ingredient| %>
+            <%= render 'ingredient_fields', f: ingredient %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association 'Add Ingredient', f, :ingredients, class: "btn btn-default add-button" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>Directions</h3>
+        <div id="directions">
+          <%= f.simple_fields_for :directions do |direction| %>
+            <%= render 'direction_fields', f: direction %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association 'Add Step', f, :directions, class: 'btn btn-default add-button' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= f.button :submit, class: "btn btn-danger" %>
+<% end %>
+
+    
+  
+  
+
+
+
+
+
+
+
+<!--<%= simple_form_for @recipe, html: { multipart: true, class: 'form-horizontal' } do |f| %>-->
+<!--  <% if @recipe.errors.any? %>-->
+<!--    <p>-->
+<!--      <%= @recipe.errors.count %>-->
+<!--      Prevented this recipe from being saved-->
+<!--    </p>-->
+<!--    <ul>-->
+<!--      <% @recipe.errors.full_messages.each do |msg| %>-->
+<!--        <li>-->
+<!--          <%= msg %>-->
+<!--        </li>-->
+<!--      <% end %>-->
+<!--    </ul>-->
+<!--  <% end %>-->
+<!--<div class="container">-->
+<!--  <div class="card-body form-group">-->
+<!--    <%= f.input :title, html: { class: 'form-control' } %>-->
+<!--    <%= f.input :description, html: { class: 'form-control' } %>-->
+<!--    <%= f.input :image, accept: 'image/jpeg, image/gif, image/png', input_html: { class: 'form-control', role: 'form' } %>-->
+    
+<!--    <div class="row">-->
+<!--      <div class="col-md-6">-->
+<!--        <h3>Ingredients</h3>-->
+<!--        <div id="ingredients">-->
+<!--          <%= f.simple_fields_for :ingredients do |ingredient| %>-->
+<!--            <%= render 'ingredient_fields', f: ingredient %>-->
+<!--          <% end %>-->
+<!--          <div class="links">-->
+<!--            <%= link_to_add_association 'Add Ingredient', f, :ingredients, class: "btn btn-default add-button" %>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-md-6">-->
+<!--        <h3>Directions</h3>-->
+<!--        <div id="directions">-->
+<!--          <%= f.simple_fields_for :directions do |direction| %>-->
+<!--            <%= render 'direction_fields', f: direction %>-->
+<!--          <% end %>-->
+<!--          <div class="links">-->
+<!--            <%= link_to_add_association 'Add Step', f, :directions, class: 'btn btn-default add-button' %>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+    
+    
+<!--     <%= f.button :submit, class: "btn btn-danger" %>-->
+     
+    
+<!--  <% end %>-->
+  
+<!--  <div class="col-md-4 col-md-offset-4">-->
+<!--    [ <%= link_to 'Cancel request and return to Recipes', recipes_path %> ]-->
+<!--  </div>-->
+    
+<!--  </div>-->
+<!--</div>-->
