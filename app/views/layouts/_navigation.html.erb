@@ -36,10 +36,11 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     
+    
      <% if logged_in? %>
         <div class="dropdown">
           <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= current_chef.chefname.titleize %>'s Profile 
+            <%= current_chef.chefname.titleize %>'s Profile <%= "Admin" if current_chef.admin? %>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li class="dropdown-item-text"><%= link_to 'View Profile', chef_path(current_chef) %></li>
