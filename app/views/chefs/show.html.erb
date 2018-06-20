@@ -3,10 +3,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 col-md-4-center">
-      <%= gravatar_for @chef, size: 150 %>
+      <%= gravatar_for @chef, size: 120 %>
     </div>
   </div>
   
-  <h4 align="center"><%= @chef.chefname %>'s Recipes</h4>
+  <h4 align="center"><%= @chef.chefname.titleize %>'s Recipes</h4>
   <%= render 'recipes/recipe', obj: @chef.recipes %>
 </div>
+

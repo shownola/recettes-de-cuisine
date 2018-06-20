@@ -1,20 +1,31 @@
 <%= render 'shared/page_title', title: 'All Recipes' %>
 
-<%= render 'recipe', obj: @recipes %>
+<h1 align="center">List of Recipes</h1>
+<div class="container">
+<% @recipes.each_slice(4) do |recipes| %>
+  <div class="row">
+    <% recipes.each do |recipe| %>
+      <div class="col-md-4">
+        <div class="recipe">
+          <div class="image_wrapper">
+            <%= link_to recipe do %>
+              <%= image_tag(recipe.image.url,size: '300x300') unless recipe.image.blank? %>
+            <% end %>
+          </div>
+          <h2>
+            <%= link_to recipe.title, recipe %>
+          </h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+</div>
+  
 
 
-<!--<% @recipes.each do |recipe| %>-->
-<!--  <div class="row">-->
-<!--    <div class='col-md-2'>-->
-<!--      <section class="text-center">-->
-<!--        <%= gravatar_for(recipe.chef, size: 120) %>-->
-<!--      </section>-->
-<!--    </div>-->
-<!--    <div class="col-md-8 card">-->
-<!--      <h4><%= link_to recipe.title, recipe_path(recipe) %></h4>-->
-<!--      <p><%= truncate(recipe.description, legnth: 150) %></p>-->
-<!--      <span class="quiet"><small>Created at: <%= time_ago_in_words(recipe.created_at) %> ago  </small></span>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--<% end %>-->
+
+
+
+
 

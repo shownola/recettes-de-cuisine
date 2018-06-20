@@ -12,9 +12,7 @@
     <!--</section-->
     <h4><%= link_to recipe.title, recipe_path(recipe) %></h4>
     <h6><%= truncate(recipe.description, length: 150) %></h6>
-    <% if recipe.ingredients.any? %>
-      <p>Ingredients: <%= render recipe.ingredients %></p>
-    <% end %>
+    
     
     </div>
   </div>
