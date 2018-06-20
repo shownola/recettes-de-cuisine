@@ -13,11 +13,14 @@
     </ul>
   <% end %>
 <div class="container">
-  <div class="card-body form-group">
+  <div class="card-body form-group col-md-10">
     <%= f.input :title, html: { class: 'form-control' } %>
     <%= f.input :description, html: { class: 'form-control' } %>
     <%= f.input :image, accept: 'image/jpeg, image/gif, image/png', input_html: { class: 'form-control', role: 'form' } %>
+ 
     
+  
+
     <div class="row">
       <div class="col-md-6">
         <h3>Ingredients</h3>
@@ -43,7 +46,7 @@
       </div>
     </div>
   </div>
-  <%= f.button :submit, class: "btn btn-danger" %>
+  <%= f.button :submit, class: "btn btn-success" %>
 <% end %>
 
     
