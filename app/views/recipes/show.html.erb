@@ -1,60 +1,108 @@
 <%= render 'shared/page_title', title: @recipe.title %>
 
 <div class="main_content">
-<div class="row" id="recipe_top">
-  <div class="col-md-4">
-  <%= image_tag(@recipe.image.url, size: '400x400') if @recipe.image? %> 
-  </div>
-  <div class="col-md-8 col-md-offset-1">
-  <div id="recipe_info">
-  <h1>
-    <%= @recipe.title %>
-  </h1>
+  <div class="row" id="recipe_top">
+    <div class="col-md-4">
+      <%= image_tag(@recipe.image.url, size: '400x400') if @recipe.image? %> 
+    </div>
+    <div class="col-md-8 col-md-offset-1">
+      <div id="recipe_info">
+        <h1>
+          <%= @recipe.title %>
+        </h1>
   
-  <p class="description">
-    <%= @recipe.description %>
-  </p>
-  <span class="quiet"><small>Created <%= time_ago_in_words(@recipe.created_at) %> ago by: </small><em><%= @recipe.chef.chefname %></em></span>
+        <p class="description">
+          <%= @recipe.description %>
+        </p>
+        <span class="quiet float-right"><small>Created <%= time_ago_in_words(@recipe.created_at) %> ago by: </small><em><%= @recipe.chef.chefname %></em></span>
+        <p class="float-right">
+          <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %>
+        </p>
   
-</div>
-</div>
-</div>
-<div class="row">
-  <div class="col-md-6">
-    <div id="ingredients">
-      <h2>Ingredients</h2>
-      <ul>
-        <% @recipe.ingredients.each do |ingredient| %>
-          <li>
-            <%= ingredient.name %>
-          </li>
-        <% end %>
-      </ul>
+      </div>
     </div>
   </div>
-  <div class="col-md-6">
-    <div id="directions">
-      <h2>Directions</h2>
-      <ul>
-        <% @recipe.directions.each do |direction| %>
-          <li>
-            <%= direction.step %>
-          </li>
-        <% end %>
-      </ul>
+  <div class="row">
+    <div class="col-md-6">
+      <div id="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+          <% @recipe.ingredients.each do |ingredient| %>
+            <li>
+              <%= ingredient.name %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div id="directions">
+        <h2>Directions</h2>
+        <ul>
+          <% @recipe.directions.each do |direction| %>
+            <li>
+              <%= direction.step %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
+      <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
+        <%= link_to 'Edit', edit_recipe_path, class: 'btn btn-warning' %>
+        <%= link_to 'Delete', recipe_path, method: :delete, data: {confirm: "Are you sure you want to delete this recipe?"}, class: 'btn btn-danger' %>
+      <% end %>
+         <%= link_to 'Back', root_path, class: 'btn btn-success' %>
+      </div>
+ </div>
+ 
+ <div class="container">
+  
+  <% if logged_in? %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>Comments:</h3>
+        <hr />
+        <%= form_for([@recipe, @comment], :html => { class: 'form-horizontal', role: 'form' }) do |f| %>
+          <div class="form-group">
+            <div class="control-label col-md-2">
+              <%= f.label :description, 'Comment' %>
+            </div>
+            <div class="col-md-12">
+              <%= f.text_area :description, rows: 8, class: 'form-control', placeholder: 'Enter Comment Here' %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+              <%= f.submit "Submit Comment", class: 'btn btn-success' %>
+            </div>
+          </div>
+        <% end %>
+        <hr />
+      </div>
+    </div>
+  <% end %>
+  
+  
+  
+  <% if @recipe.comments != 0 %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>Prior Comments:</h3>
+        <div id="messages">
+          <%= render partial: 'comments/comments', object: @comments %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>No Comments Yet!</h3>
+      </div>
+    </div>
+  <% end %>
 </div>
-<% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
-  <%= link_to 'Edit', edit_recipe_path, class: 'btn btn-warning' %>
-  <%= link_to 'Delete', recipe_path, method: :delete, data: {confirm: "Are you sure you want to delete this recipe?"}, class: 'btn btn-danger' %>
-<% end %>
-   <%= link_to 'Back', root_path, class: 'btn btn-success' %>
-</div>
-
-</div>
-
-
+ 
 
 
 

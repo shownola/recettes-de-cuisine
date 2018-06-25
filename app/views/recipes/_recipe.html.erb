@@ -7,11 +7,17 @@
     <div align="center" class="recipe-img image-main double-border">
       <%= image_tag(recipe.image.url, size: '200x200') if recipe.image? %>
     </div>
-    <!-- <section class="chef_info text-right">-->
-    <!--  <%= gravatar_for(recipe.chef, size: 120) %>-->
-    <!--</section-->
+     <section class="chef_info text-right">
+      <%= gravatar_for(recipe.chef, size: 120) %>
+    </section>
     <h4><%= link_to recipe.title, recipe_path(recipe) %></h4>
     <h6><%= truncate(recipe.description, length: 150) %></h6>
+    <small>Created <%= time_ago_in_words(recipe.created_at) %>ago by:
+     <%= recipe.chef.chefname.titleize %></small>
+     
+     <p>
+       <span class="quiet"><small>Created <%= time_ago_in_words(@recipe.created_at) %> ago by <%= recipe.chef.chefname.titleize %> | <%= pluralize(recipe.comments.count, 'Comment') %></small></span>
+     </p>
     
     
     </div>

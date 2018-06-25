@@ -12,8 +12,8 @@ $gold: #B4A30F;
 $dark-green: #293915;
 
 body {
-	
 	background-color: #CACCD3 !important;
+	padding-left: 10px;
 }
 
 h1, h2 {
@@ -108,7 +108,7 @@ h1, h2 {
 	@include box-shadow;
 	min-height: 360px;
 	border-radius: 5px;
-	padding: 2em 8%;
+	padding: 2em 6%;
 }
 
 
