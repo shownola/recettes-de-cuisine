@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   
+  mount ActionCable.server => '/cable'
+  get '/chat', to:'chatrooms#show'
+  
+  resources :messages, only: [:create]
+  
   # get '/recipes', to: 'recipes#index'
   # get 'recipes/new', to: 'recipes#new', as: 'new_recipe'
   # get '/recipes/:id', to: 'recipes#show', as: 'recipe'

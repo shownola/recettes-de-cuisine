@@ -15,12 +15,15 @@ class ChefsController < ApplicationController
     @chef = Chef.new(chef_params)
     if @chef.save
       session[:chef_id] = @chef.id
+      cookies.signed[:chef_id] = @chef.id 
       flash[:success] = "Welcome #{@chef.chefname} to the Recettes de Cuisine App!"
       redirect_to chef_path(@chef)
     else
       render'new'
     end
   end
+  
+   
   
   def show
     @chef_recipes = @chef.recipes.paginate(page: params[:page], per_page: 5)

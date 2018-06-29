@@ -1,6 +1,6 @@
 <%= render 'shared/page_title', title: "Chef #{@chef.chefname}'s Profile" %>
 
-<div class="container">
+<div class="container image-container">
   <div class="row">
     <div class="col-md-4 col-md-4-center">
       <%= gravatar_for @chef, size: 120 %>
@@ -11,7 +11,7 @@
       <div align="center">
         <%= will_paginate @chef_recipes %>
       </div>
-      <%= render 'recipes/recipe', obj: @chef.recipes %>
+      <%= render 'recipes/recipe', obj: @chef_recipes %>
       <div align="center">
         <%= will_paginate @chef_recipes %>
       </div>
