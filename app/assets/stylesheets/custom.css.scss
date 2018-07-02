@@ -10,6 +10,7 @@
 $green: #429D10;
 $gold: #B4A30F;
 $dark-green: #293915;
+$light-gray: #CACCD3;
 
 .bg-dark-gray {
 	background-color: #969193;
@@ -17,13 +18,31 @@ $dark-green: #293915;
 
 body {
 	background-color: #CACCD3 !important;
-	box-shadow: inset 0 0 50px #000;
+	box-shadow: inset 0 0 10px #000;
 
 }
 
 h1, h2 {
 	color: $green !important;
 }
+
+h3, h2, h1, h4 {
+	font-family: 'Great Vibes', cursive!important;
+}
+h3, h4 {
+	color: $gold!important;
+}
+h2 .title-link {
+	font-size: 1.5em;
+}
+h4 .title-link {
+	color: $green;
+	font-size: 1.3em;
+}
+h4 .chef-title {
+	font-size: 1.5em;
+}
+
 .main_content {
 	padding: 50px 150px 20px 150px;
 }
@@ -55,8 +74,46 @@ h1, h2 {
 }
 .nav-item {
   font-size: 1.2em;
-  color: $dark-green;
+  color: $gold !important;
 }
+// .navbar-custom .nav-item .nav-link{
+// 	color: #fff !important;
+// 	text-shadow:
+//         0.05em 0 $gold,
+//         0 0.05em $gold,
+//         -0.05em 0 $gold,
+//         0 -0.05em $gold,
+//         -0.05em -0.05em $gold,
+//         -0.05em 0.05em $gold,
+//         0.05em -0.05em $gold,
+//         0.05em 0.05em $gold;
+// }
+
+.navbar-custom .nav-item .nav-link{
+	color: #fff !important;
+	text-shadow:
+				0.07em 0 $gold,
+        0 0.07em  $gold,
+        -0.07em 0 $gold,
+        0 -0.07em $gold;
+        
+}
+
+// .navbar-custom .nav-item .nav-link{
+// 	color: $gold !important;
+// 	text-shadow:
+//         0.05em 0 #fff,
+//         0 0.05em #fff,
+//         -0.05em 0 #fff,
+//         0 -0.05em #fff,
+//         -0.05em -0.05em #fff,
+//         -0.05em 0.05em #fff,
+//         0.05em -0.05em #fff,
+//         0.05em 0.05em #fff;
+// }
+        
+
+
 #logo {
   color: $green;
   text-transform: uppercase;
@@ -65,8 +122,32 @@ h1, h2 {
   font-size: 25px;
   text-shadow: 1px 1px 2px #000000;
 }
+// .dropdown .btn {
+// 	background-color: $green;
+// 	color: $gold;
+// 		text-shadow:
+//         0.05em 0 $dark-green,
+//         0 0.05em $dark-green,
+//         -0.05em 0 $dark-green,
+//         0 -0.05em $dark-green,
+//         -0.05em -0.05em $dark-green,
+//         -0.05em 0.05em $dark-green,
+//         0.05em -0.05em $dark-green,
+//         0.05em 0.05em $dark-green;
+// }
+
 .dropdown .btn {
 	background-color: $green;
+	color: #fff;
+		text-shadow:
+        0.05em 0 $gold,
+        0 0.05em $gold,
+        -0.05em 0 $gold,
+        0 -0.05em $gold,
+        -0.05em -0.05em $gold,
+        -0.05em 0.05em $gold,
+        0.05em -0.05em $gold,
+        0.05em 0.05em $gold;
 }
 .btn-default {
 	color: $gold;
@@ -88,6 +169,10 @@ min-height: 400px;
 	font-size: 5em;
 	font-weight: bold;
 	text-shadow: 2px 2px 4px #000000;
+}
+
+.featurette span .text-muted {
+	color: $gold !important;
 }
 
 .featurette-image {
@@ -207,6 +292,8 @@ min-height: 400px;
 }
 .listing li a {
 	color: $gold;
+	font-family: 'Great Vibes', cursive!important;
+	font-size: 1.3em;
 }
 .chef-title {
   font-weight: bold;
@@ -274,5 +361,27 @@ min-height: 400px;
 
 .container-fluid {
 	margin: 15px 40px 15px 40px;
+}
+
+/* Chef's Show Page */
+
+.recipe-img {
+	float: left; 
+}
+.liking {
+	padding-right: 10px;
+}
+.fa-lg {
+	color: $green;
+}
+
+.chefs-recipes {
+	padding-left: 8px;
+}
+.title-link {
+	padding-left: 8px;
+}
+h6 .title-link {
+	padding-left: 8px;
 }
 

@@ -61,7 +61,7 @@
   <% if logged_in? %>
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <h3>Comments:</h3>
+        <h3>Leave A Reply</h3>
         <hr />
         <%= form_for([@recipe, @comment], remote: true, :html => { class: 'form-horizontal', role: 'form' }) do |f| %>
           <div class="form-group">
@@ -84,12 +84,28 @@
   <% end %>
   
   
+  <div class="container">
+  <div class="row liking">
+    <div class="row col-md-8 col-md-offset-2">
+      <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+      <i class="fa fa-thumbs-up fa-lg"></i>
+        
+      <% end %><%= @recipe.thumbs_up_total %>  || 
+      <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+        <i class="fa fa-thumbs-down fa-lg"></i>
+      <% end %> <%= @recipe.thumbs_down_total %>
+    </div>
+  </div>
+</div>
+
+  
+  
   
   <% if @recipe.comments != 0 %>
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <h3>Prior Comments:</h3>
-        <div id="messages     ">
+        <div id="messages">
           <%= render partial: 'comments/comments', object: @comments %>
         </div>
       </div>
