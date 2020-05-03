@@ -61,19 +61,21 @@ h4 .chef-title {
 	margin-bottom: 0px;
 	@include box-shadow;
 	border: none;
+	height: 6rem;
 	.navbar-brand {
 		text-transform: uppercase;
 		letter-spacing: -1px;
 		font-weight: bold;
-		font-size: 25px;
-	
+		// font-size: 2.5rem;
+		// font-size: 25px;
+
 		a {
 			color: $green;
 		}
 	}
 }
 .nav-item {
-  font-size: 1.2em;
+  font-size: 1.3em;
   color: $gold !important;
 }
 // .navbar-custom .nav-item .nav-link{
@@ -96,7 +98,7 @@ h4 .chef-title {
         0 0.07em  $gold,
         -0.07em 0 $gold,
         0 -0.07em $gold;
-        
+
 }
 
 // .navbar-custom .nav-item .nav-link{
@@ -111,16 +113,19 @@ h4 .chef-title {
 //         0.05em -0.05em #fff,
 //         0.05em 0.05em #fff;
 // }
-        
+
 
 
 #logo {
   color: $green;
-  text-transform: uppercase;
+
   letter-spacing: -1px;
   font-weight: bold;
-  font-size: 25px;
+	font-size: 2.5rem;
+	font-family: 'Great Vibes', cursive!important;
   text-shadow: 1px 1px 2px #000000;
+	letter-spacing: 1.2px;
+	padding-right: 2rem;
 }
 // .dropdown .btn {
 // 	background-color: $green;
@@ -158,14 +163,25 @@ h4 .chef-title {
 
 /* Home Page */
 
+.container {
+
+	padding-top: 4rem;;
+}
+.show-page {
+	margin-top: 6rem;
+	// padding-top: 5rem;
+}
+
 .jumbotron {
 background-image: image-url('veggies1.jpg');
 background-size: cover;
 height: 100%;
-min-height: 400px;
+min-height: 500px;
+// max-height: 500px;
 }
 
 .jumbo-text {
+	padding-top: 6rem;
 	font-size: 5em;
 	font-weight: bold;
 	text-shadow: 2px 2px 4px #000000;
@@ -233,14 +249,15 @@ min-height: 400px;
 }
 
 #recipe_info {
-	h1 {
-		font-size: 36px;
+	h2 {
+		font-size: 24px;
 		font-weight: normal;
 		color: $green;
+		// text-transform: lowercase;
 	}
 	.description {
 		color: #8A8A8A;
-		font-size: 20px;
+		font-size: 1rem;
 	}
 }
 
@@ -356,7 +373,7 @@ min-height: 400px;
 }
 .thumbnail img {
     width: 100%;
-    
+
 }
 
 .container-fluid {
@@ -366,7 +383,7 @@ min-height: 400px;
 /* Chef's Show Page */
 
 .recipe-img {
-	float: left; 
+	float: left;
 }
 .liking {
 	padding-right: 10px;
@@ -384,4 +401,3 @@ min-height: 400px;
 h6 .title-link {
 	padding-left: 8px;
 }
-

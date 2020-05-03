@@ -1,3 +1,4 @@
+<div class="container mt-5">
 <%= render 'shared/page_title', title: 'All Recipes' %>
 
 
@@ -13,7 +14,7 @@
             <% end %>
           </div>
           <h2>
-            <%= link_to recipe.title, recipe, class: 'title-link' %>
+            <%= link_to recipe.title.titleize, recipe, class: 'title-link' %>
           </h2>
         </div>
       </div>
@@ -21,11 +22,5 @@
   </div>
 <% end %>
 </div>
-  
 
-
-
-
-
-
-
+</div>
