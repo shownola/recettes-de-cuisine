@@ -160,6 +160,17 @@ h4 .chef-title {
 	font-size: 1.3em;
 }
 
+.login {
+	color: #fff;
+	&:hover {
+		color: $gold;
+	}
+}
+
+.cancel-link {
+	color: $green;
+}
+
 
 /* Home Page */
 
