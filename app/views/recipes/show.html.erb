@@ -88,15 +88,15 @@
   <% end %>
 
 
-  <div class="container">
+  <div class="">
   <div class="row liking">
-    <div class="row col-md-8 col-md-offset-2">
+    <div class="row col-md-8 col-md-offset-2 pb-4">
       <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
       <i class="fa fa-thumbs-up fa-lg"></i>
 
-      <% end %><%= @recipe.thumbs_up_total %>  ||
+      <% end %><%= @recipe.thumbs_up_total %><span class="pl-2">  || </span>
       <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
-        <i class="fa fa-thumbs-down fa-lg"></i>
+        <i class="fa fa-thumbs-down fa-lg pl-2"></i>
       <% end %> <%= @recipe.thumbs_down_total %>
     </div>
   </div>

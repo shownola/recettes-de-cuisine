@@ -15,7 +15,7 @@
 
     <section class='chefs-recipes'>
     <h4><%= link_to recipe.title.titleize, recipe_path(recipe), class: 'title-link pl-2' %></h4>
-    <h6><%= truncate(recipe.description, length: 150, class: 'title-link') %></h6>
+    <h6 class="text-muted"><%= truncate(recipe.description, length: 150, class: 'title-link') %></h6>
     <!--<small>Created <%= time_ago_in_words(recipe.created_at) %>ago by:-->
     <!-- <%= recipe.chef.chefname.titleize %></small>-->
 
