@@ -34,6 +34,9 @@ h3, h4 {
 }
 h2 .title-link {
 	font-size: 1.5em;
+	&:hover {
+		color: $gold;
+	}
 }
 h4 .title-link {
 	color: $green;
