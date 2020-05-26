@@ -176,6 +176,19 @@ h4 .chef-title {
 	color: $green;
 }
 
+.search-recipe-link {
+	font-size: 1.1rem;
+	color: $green;
+	text-decoration: none!important;
+	&:hover {
+		color: $gold;
+	}
+}
+table a span .search-recipe-link {
+	text-decoration: none;
+}
+
+
 
 /* Home Page */
 
