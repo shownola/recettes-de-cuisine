@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -65,7 +67,8 @@ gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem 'fog-aws'
-gem 'simple_form'
+
+gem "simple_form", ">= 5.0.0"
 gem 'cocoon'
 gem 'will_paginate', '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
