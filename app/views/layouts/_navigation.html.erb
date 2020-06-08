@@ -41,9 +41,9 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form> -->
 
-    <%= form_tag(search_recipes_path, method: :get, class: 'form-inline my-2 my-lg-0') do %>
+    <%= form_tag(search_recipes_path, method: :get, class: 'form-inline my-2 my-lg-0 pr-5') do %>
       <%= text_field_tag :search, params[:search], placeholder: 'Search Recipes', class: 'form-control mr-sm-2' %>
-      <%= submit_tag "Search", class: 'btn btn-outline-success my-2 my-sm-0' %>
+      <%= submit_tag "Search", class: 'btn btn-outline-success my-2 my-sm-0 mx-0' %>
     <% end %>
 
 

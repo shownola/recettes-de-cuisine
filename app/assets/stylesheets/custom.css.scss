@@ -60,6 +60,8 @@ h4 .chef-title {
 	font-weight: bold;
 }
 
+
+
 .navbar {
 	margin-bottom: 0px;
 	@include box-shadow;
@@ -95,14 +97,29 @@ h4 .chef-title {
 // }
 
 .navbar-custom .nav-item .nav-link{
-	color: #fff !important;
-	text-shadow:
-				0.07em 0 $gold,
-        0 0.07em  $gold,
-        -0.07em 0 $gold,
-        0 -0.07em $gold;
+	color: #FCF901;
+	text-shadow: 1px 1px 2px #000000;
 
 }
+// .navbar-custom .nav-item .nav-link{
+// 	color: #FCF901;
+// 	text-shadow:
+// 				0.07em 0 #000,
+//         0 0.07em  #000,
+//         -0.07em 0 #000,
+//         0 -0.07em #000;
+//
+// }
+
+// .navbar-custom .nav-item .nav-link{
+// 	color: #fff !important;
+// 	text-shadow:
+// 				0.07em 0 $gold,
+//         0 0.07em  $gold,
+//         -0.07em 0 $gold,
+//         0 -0.07em $gold;
+//
+// }
 
 // .navbar-custom .nav-item .nav-link{
 // 	color: $gold !important;
@@ -148,17 +165,24 @@ h4 .chef-title {
 
 .dropdown .btn {
 	background-color: $green;
+	border: $green;
 	color: #fff;
-		text-shadow:
-        0.05em 0 $gold,
-        0 0.05em $gold,
-        -0.05em 0 $gold,
-        0 -0.05em $gold,
-        -0.05em -0.05em $gold,
-        -0.05em 0.05em $gold,
-        0.05em -0.05em $gold,
-        0.05em 0.05em $gold;
+
 }
+
+// .dropdown .btn {
+// 	background-color: $green;
+// 	color: #fff;
+// 		text-shadow:
+//         0.05em 0 $gold,
+//         0 0.05em $gold,
+//         -0.05em 0 $gold,
+//         0 -0.05em $gold,
+//         -0.05em -0.05em $gold,
+//         -0.05em 0.05em $gold,
+//         0.05em -0.05em $gold,
+//         0.05em 0.05em $gold;
+// }
 .btn-default {
 	color: $gold;
 	font-weight: bold;
@@ -193,12 +217,20 @@ table a span .search-recipe-link {
 /* Home Page */
 
 .container {
-
 	padding-top: 4rem;;
 }
+
 .show-page {
 	margin-top: 6rem;
 	// padding-top: 5rem;
+}
+
+.jumbo-p {
+	font-size: 1.75rem;
+	font-weight: 500;
+	color: #FCF901;
+	text-shadow: 2px 2px 4px #000000;
+	transform: scale(1, 1.3);
 }
 
 .jumbotron {
