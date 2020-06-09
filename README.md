@@ -1,38 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+An Ruby on Rails recipe application where you can save or share recipes with friends. Also contains a live chat channel
 
 * Ruby version is Rails 5.1
 
+* You can search the recipes from the navigation bar
 
-* Services (job queues, cache servers, search engines, etc.)
+* Deployed to Heroku and contains a Redis addon.
 
-* Deployment instructions
-* Need to add redis and get production ready
-*
+* You can visit the app at https://shownola-recettes-de-cuisine.herokuapp.com/
+
 
 * ...
-
-
-
-
-Detecting rails configuration failed
-remote:        set HEROKU_DEBUG_RAILS_RUNNER=1 to debug
-
-
-4 Eaches Skinless, Boneless Chicken Breast Halves
-1 Pinch Salt And Freshly Ground Black Pepper To Taste
-2 Eggs
-1 Cup Panko Bread Crumbs, Or More As Needed
-½ Cup Grated Parmesan Cheese
-2 Tablespoons All Purpose Flour, Or More If Needed
-1 Cup Olive Oil For Frying
-½ Cup Prepared Tomato Sauce
-¼ Cup Fresh Mozzarella, Cut Into Small Cubes
-¼ Cup Chopped Fresh Basil
-½ Cup Grated Provolone Cheese
-¼ Cup Grated Parmesan Cheese
-1 Tablespoon Olive Oil
